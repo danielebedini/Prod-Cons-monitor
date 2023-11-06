@@ -11,26 +11,26 @@ class Buffer {
 
     public synchronized void produce(int item) throws InterruptedException {
         while (count == size) {
-            // Il buffer è pieno, il produttore attende
+            // if the buffer is full, then producer waits
             wait();
         }
 
         data[count] = item;
         count++;
         System.out.println("Produced: " + item);
-        notify(); // Sveglia un thread in attesa (consumatore)
+        notify(); // wakes up a waiting thread (consumer)
     }
     
     public synchronized int consume() throws InterruptedException {
         while (count == 0) {
-            // Il buffer è vuoto, il consumatore attende
+            // if the buffer is empty, then consumer waits
             wait();
         }
 
         int item = data[count - 1];
         count--;
         System.out.println("Consumed: " + item);
-        notify(); // Sveglia un thread in attesa (produttore)
+        notify(); // wakes up a waiting thread (producer)
         return item;
     }
 }

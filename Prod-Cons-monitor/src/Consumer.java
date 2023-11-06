@@ -2,8 +2,8 @@ import java.util.Random;
 
 class Consumer implements Runnable {
     private Buffer buffer;
-    int min = 500;
-    int max = 3000;
+    int min = 10;
+    int max = 1000;
     Random random = new Random();
 
     int randomNumber = random.nextInt((max - min) + 1) + min;
