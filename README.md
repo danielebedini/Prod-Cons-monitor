@@ -10,7 +10,7 @@ Java gives us few possibilities, we can handle this with explicit locks or we ca
 #### But what is a monitor?
 
 With _monitor_ we refer to a high-level paradigm for handling concurrent operations in a shared data structure.
-We can use the keyword _synchronized_ for entire methods or for small portion of code when we want to access the shared structure.
+We can use the keyword _synchronized_ for entire methods or for small portions of code when we want to access the shared structure.
 The JVM guarantess that with this keyword all the operations will be synchronized and therefore we will have integrity of shared data.
 Also we can use the three condition variables: _wait()_, _notify()_ and _notifyall()_.
 
