@@ -26,7 +26,7 @@ Also we can use the three condition variables: _wait()_, _notify()_ and _notifya
 
 ---
 
-##### Buffer
+#### Buffer
 The buffer is the shared data structure between the producers and the consumers, it has a maximum _capacity_ and keeps track of the items in it with the _count_ variable.
 
 It has the following 2 methods:
@@ -35,10 +35,10 @@ It has the following 2 methods:
 
 *Note*: this methods are _synchronized_ because, as I said before, producers and consumer are operating with a shared data structure, therefore we have to handle multi-threading.
 
-##### Producer
+#### Producer
 The producer is a thread that simply takes the shared _buffer_ and tries to write something on it, I added some sleep between the threads for simulatig a real execution.
 
-##### Consumer
+#### Consumer
 The consumer is a thread that takes the shared _buffer_ and tries to consume (read) an item put by a producer in the _buffer_.
 
 #### Main
